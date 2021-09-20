@@ -28,7 +28,7 @@ public class CategoryController {
     @PostMapping("categories")
     public String postCategory(@RequestBody Category category){
         categoryService.saveCategory(category);
-        return "Kategooria " + category.getName() +" tüüp on  " + category.getCategory();
+        return "Kategooria " + category +" tüüp on  " + category;
         //Postmanis saab POST meetodit checkida. Kasuta RAW inputi ja URL-iks localhost:8080/items
     }
 
