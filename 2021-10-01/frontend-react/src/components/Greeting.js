@@ -4,7 +4,7 @@ const Greeting = ({ name, age }) => {
   return (
     <>
       <h1>Greeting { name }</h1>
-      <p>Greeting text { age }</p>
+      <p>My age { age }</p>
     </>
   )
 }

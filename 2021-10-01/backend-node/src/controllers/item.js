@@ -23,6 +23,17 @@ exports.createItem = async (req, res) => {
 
 exports.updateItem = async (req, res) => {
 
+  const { quality } = req.params;
+
+  const item = await Item.findOneAndUpdate({ _quality: quality });
+
+  if (!item) {
+    res.status(404).send("No item with that id found")
+  } else {
+
+    item.quality += 5;
+    res.status(200).send(`Item's quality successfully updated: \n ${item}`);
+  }
 }
 
 exports.deleteItem = async (req, res) => {
