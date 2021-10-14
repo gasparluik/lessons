@@ -1,0 +1,36 @@
+.navbar {
+    background-color: #D4EFF6FF;
+    height: 150px;
+    display: flex;
+    justify-content: space-between;
+    margin:auto;
+}
+
+.logo-cart {
+    height: 50px;
+    margin: 50px;
+}
+
+.logo-neuromancer {
+    margin: 10px 10px;
+}
+
+.navbar-btn-wrapper {
+    max-height: 150px;
+    width: 100%;
+    padding: 10px 10px;
+    display: flex;
+    flex-flow: row;
+}
+
+.navbar-btn {
+    cursor: pointer;
+    height: 50px;
+    width: 90%;
+    margin: 80px 50px 70px 50px;
+    padding: 5px 10px;
+}
+
+.navbar-btn:hover {
+    text-shadow: #282c34;
+}
