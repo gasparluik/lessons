@@ -1,0 +1,15 @@
+import React from "react";
+
+function BankBalance(balance){
+    const setBalance = () =>{
+        balance = 500;
+
+    }
+    return (
+        <>
+            <h1>Your balance { balance }</h1>
+        </>
+    )
+};
+
+export default BankBalance;
