@@ -31,7 +31,7 @@ exports.updateItem = async (req, res) => {
     res.status(404).send("No item with that id found")
   } else {
 
-    item.quality++;
+    item.quality++; //comment
 
     const savedItem = await item.save();
 
