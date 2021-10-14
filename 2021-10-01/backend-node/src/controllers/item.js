@@ -31,7 +31,10 @@ exports.updateItem = async (req, res) => {
     res.status(404).send("No item with that id found")
   } else {
 
-    item.quality += 5;
+    item.quality++;
+
+    const savedItem = await item.save();
+
     res.status(200).send(`Item's quality successfully updated: \n ${item}`);
   }
 }
