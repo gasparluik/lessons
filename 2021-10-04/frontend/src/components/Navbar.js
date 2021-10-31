@@ -7,22 +7,19 @@ function Navbar() {
         <Link to="/">
             <img className="logo" src="webshio.png" alt=""/>
         </Link>
-
-        <div className="navbar ul">
-            <div className="navbar.ul.li">
-                <ul>
-                    <Link to="add-item">
-                        <button>Lisa uus ese</button>
-                    </Link>
-                    <Link to="/">
-                        <button>Button1</button>
-                    </Link>
-                    <Link to="/">
-                        <button>Button2</button>
-                    </Link>
-                </ul>
-            </div>
+        <div className="navbar-btns">
+                <Link to="add-item">
+                    <button>Lisa uus ese</button>
+                </Link>
+                <Link to="/">
+                    <button>Button1</button>
+                </Link>
+                <Link to="/">
+                    <button>Button2</button>
+                </Link>
         </div>
+
+
         <Link to="cart">
             <img className="cart" src="cart.svg" alt=""/>
         </Link>
