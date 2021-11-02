@@ -6,7 +6,7 @@ function Navbar() {
     <div className="navbar">
         <div className="logo">
             <Link to="/">
-                <img src="webshio.png" alt="website logo"/>
+                <img src="logo192.png" alt="website logo"/>
             </Link>
         </div>
 
@@ -15,7 +15,7 @@ function Navbar() {
                     <button>Lisa uus ese</button>
                 </Link>
                 <Link to="/">
-                    <button>Button1</button>
+                    <button>Kategooriad</button>
                 </Link>
                 <Link to="/">
                     <button>Button2</button>
