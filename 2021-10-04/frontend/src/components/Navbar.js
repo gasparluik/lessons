@@ -4,9 +4,12 @@ import { Link } from 'react-router-dom';
 function Navbar() {
   return(
     <div className="navbar">
-        <Link to="/">
-            <img className="logo" src="webshio.png" alt=""/>
-        </Link>
+        <div className="logo">
+            <Link to="/">
+                <img src="webshio.png" alt="website logo"/>
+            </Link>
+        </div>
+
         <div className="navbar-btns">
                 <Link to="add-item">
                     <button>Lisa uus ese</button>
@@ -19,10 +22,12 @@ function Navbar() {
                 </Link>
         </div>
 
+        <div className="cart">
+            <Link to="cart">
+                <img src="cart.svg" alt=""/>
+            </Link>
+        </div>
 
-        <Link to="cart">
-            <img className="cart" src="cart.svg" alt=""/>
-        </Link>
     </div>
 
   );
