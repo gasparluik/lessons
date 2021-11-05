@@ -1,5 +1,5 @@
 //reducer on nagu masin/
-import {POST_ADD, POST_REMOVE, USER_LOGIN, USER_LOGOUT} from "./actions";
+import {POST_ADD, POST_REMOVE, USER_LOGIN, USER_LOGOUT, POSTS_UPDATE} from "./actions";
 
 const postReducer = (state, action) => {
     switch(action.type){
@@ -10,7 +10,14 @@ const postReducer = (state, action) => {
             }
         case POST_REMOVE:
             return {
-                ...state
+                ...state,
+                data: state.data.filter(post => post.id !== action.payload)
+            }
+        //kodutööna lisada uue listi vastu võtmine 
+        case POSTS_UPDATE:
+            return {
+                ...state,
+                data: action.payload
             }
         default:
             return state
