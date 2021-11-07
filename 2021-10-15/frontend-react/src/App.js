@@ -5,6 +5,7 @@ import Login from "./pages/Login";
 import Posts from "./pages/Posts";
 import Signup from "./pages/Signup";
 import "./components/Layout.css";
+import ShowPosts from "./pages/ShowPosts";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route exact path="/" component={ShowMagic} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/signup" component={Signup} />
+          <Route exact path="/showposts" component={ShowPosts} />
         </Switch>
       </div>
     </BrowserRouter>

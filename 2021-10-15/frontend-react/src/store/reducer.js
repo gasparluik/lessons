@@ -1,5 +1,5 @@
 //reducer on nagu masin/
-import {POST_ADD, POST_REMOVE, USER_LOGIN, USER_LOGOUT, POSTS_UPDATE} from "./actions";
+import {POST_ADD, POST_REMOVE, USER_LOGIN, USER_LOGOUT, POSTS_UPDATE, USER_REGISTER} from "./actions";
 
 const postReducer = (state, action) => {
     switch(action.type){
@@ -37,6 +37,11 @@ const authReducer = (state, action) => {
                 ...state,
                 token: null,
                 user: null
+            }
+        case USER_REGISTER:
+            return {
+                ...state,
+                data: state.data.concat(action.payload)
             }
         default:
             return state

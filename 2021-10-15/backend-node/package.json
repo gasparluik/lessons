@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "src/server.js",
+  "proxy": "https://cat-fact.herokuapp.com/",
   "scripts": {
     "start": "node src/server.js",
     "dev": "nodemon"

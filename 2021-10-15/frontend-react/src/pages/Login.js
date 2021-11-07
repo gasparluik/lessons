@@ -48,7 +48,6 @@ function Login() {
     <div className="body">
       <Form
         onFinish={handleSubmit}
-        style={{ textAlign: "center", margin: "100px" }}
       >
       <div className="form-inner">
         <h1>Login</h1>
@@ -61,9 +60,8 @@ function Login() {
               message: "Please insert your username!",
             },
           ]}
-          style={{ margin: "10px", fontSize: "20px" }}
         >
-          <Input placeholder="example@tlu.ee" style={{ fontSize: "18px" }} />
+          <Input placeholder="example@tlu.ee"/>
         </Form.Item>
         <Form.Item
           label="Password"
@@ -71,15 +69,14 @@ function Login() {
           rules={[
             {
               required: true,
-              message: "Please insert your password!!",
+              message: "Please insert your password!",
             },
           ]}
         >
-          <Input
+          <Input.Password
             type={passwordShown ? "text" : "password"}
             placeholder="password"
           />
-          <EyeInvisibleFilled onClick={togglePassword} />
         </Form.Item>
         <Button
           type="primary"

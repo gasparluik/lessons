@@ -1,13 +1,13 @@
 const { Schema, model } = require('mongoose')
 
-const itemSchema = new Schema({
-  name: { type: String, required: true },
-  quality: { type: Number, required: true },
+const postSchema = new Schema({
+  content: { type: String, required: true },
+  user: { type: String, required: false },
   unused: { type: Boolean, default: true },
   color: { type: String, enum: ['red', 'green', 'blue'], default: 'green' },
   createdAt: { type: Date, default: Date.now }
 });
 
-const Item = model("Item", itemSchema)
+const Post = model("Post", postSchema)
 
-module.exports = Item
+module.exports = Post

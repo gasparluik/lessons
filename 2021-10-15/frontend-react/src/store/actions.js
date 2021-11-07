@@ -4,10 +4,15 @@ export const USER_LOGIN = "USER_LOGIN"
 export const USER_LOGOUT = "USER_LOGOUT"
 export const POSTS_UPDATE = "POST_UPDATE"
 export const USER_REGISTER = "USER_REGISTER"
+export const POST_GET= "POST_GET"
 
 export const addPost = post => ({
     type: POST_ADD,
     payload: post
+})
+export const getPosts = data => ({
+    type: POST_GET,
+    payload: data
 })
 
 export const removePost = id => ({
@@ -28,7 +33,7 @@ export const updatePosts = array => ({
     type: POSTS_UPDATE,
     payload: array
 })
-export const registerUser = data => ({
+export const registerUser = post => ({
     type: USER_REGISTER,
-    payload: data
+    payload: post
 })

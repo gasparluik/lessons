@@ -4,13 +4,14 @@ const PORT = process.env.PORT || 3000
 const jwtAuth = require("./middleware/jwtAuth")
 require("dotenv").config()
 
-const itemRoutes = require('./routes/item');
+const postRoutes = require('./routes/post');
 const authRoutes = require('./routes/auth');
 
 const app = express()
+
 app.use(express.json());
 
-app.use('/api/item', itemRoutes);
+app.use('/api/post', postRoutes);
 app.use('/api/auth', authRoutes);
 
 app.get('/', (req, res) => {
@@ -22,6 +23,7 @@ app.get('/secret', jwtAuth, (req, res) => {
 
 app.get('*', (req, res) => {
   res.send('This route does not exist')
+  res.header('Access-Control-Allow-Origin', '*')
 })
 
 mongoose

@@ -1,7 +1,6 @@
 import { useContext, useRef, useState, useEffect } from "react";
 import { Context } from "../store";
 import { addPost, removePost, updatePosts } from "../store/actions";
-import { Table } from 'antd'
 
 function Posts() {
 
@@ -13,28 +12,6 @@ function Posts() {
   //Ilma dependency massiivita ehk ilama [] kutsub välja igal renderdusel
   //tühja massiivi dependencyna esimest korda
   //saab ka kutsuta teatud state 
-  useEffect(() => {
-
-    dispatch(updatePosts([
-        {
-            id: 1,
-            title: "Test-prefetched-array-1"
-        },
-        {
-            id: 2,
-            title: "Test-prefetched-array-2"
-        },
-        {
-            id: Date.now(),
-            title: "Test-prefetched-array-3"
-        },
-        {
-            id: Date.now(),
-            title: "Test-prefetched-array"
-        }
-    ]))
-
-  }, [])
 
   //võite panna eraldi nupu, et get latest from database (sync)
 
@@ -59,21 +36,10 @@ function Posts() {
 
     dispatch(addPost(newPost));
 
-    const columns = [
-      {
-        id: Date.now(),
-        title,
-      },
-      {
-        id: Date.now(),
-        title,
-      }
-    ];
-
   };
 
   return (
-    <div style={{ textAlign: "center" }}>
+    <div>
       <h1>Posts</h1>
       <form onSubmit={handleSubmit}>
         <input
