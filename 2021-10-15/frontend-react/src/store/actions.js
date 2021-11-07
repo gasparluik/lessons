@@ -3,6 +3,7 @@ export const POST_REMOVE = "POST_REMOVE";
 export const USER_LOGIN = "USER_LOGIN"
 export const USER_LOGOUT = "USER_LOGOUT"
 export const POSTS_UPDATE = "POST_UPDATE"
+export const USER_REGISTER = "USER_REGISTER"
 
 export const addPost = post => ({
     type: POST_ADD,
@@ -26,4 +27,8 @@ export const logoutUser = data => ({
 export const updatePosts = array => ({
     type: POSTS_UPDATE,
     payload: array
+})
+export const registerUser = data => ({
+    type: USER_REGISTER,
+    payload: data
 })

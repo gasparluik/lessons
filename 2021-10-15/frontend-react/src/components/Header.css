@@ -1,9 +1,20 @@
+
 .navbar{
     height: 100px;
     background-color: #222;
     display: flex;
     padding: 5px;
     justify-content: flex-end;
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+.logo{
+    margin: 15px;
+    margin-right: auto;
+    cursor: pointer;
 }
 
 .navbar-btns{

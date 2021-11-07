@@ -1,13 +1,18 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { Button } from 'antd'
-
-import '../components/Header.css'
+import "./Header.css"
 
 
 function Header(){
     return(
         <div className="navbar">
+        <div className="logo">
+            <Link to="/">
+                <img src="circuit.png" width="70px" height="70px" alt="website logo"/>
+            </Link>
+        </div>
+
             <div className="navbar-btns">
                 <div >
                     <Link to="/posts"><Button className="btns">Send post</Button></Link>

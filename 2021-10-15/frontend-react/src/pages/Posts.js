@@ -1,6 +1,7 @@
 import { useContext, useRef, useState, useEffect } from "react";
 import { Context } from "../store";
 import { addPost, removePost, updatePosts } from "../store/actions";
+import { Table } from 'antd'
 
 function Posts() {
 
@@ -57,6 +58,18 @@ function Posts() {
     //siis teeme dispatchi ja uuendame state lokaalselt.
 
     dispatch(addPost(newPost));
+
+    const columns = [
+      {
+        id: Date.now(),
+        title,
+      },
+      {
+        id: Date.now(),
+        title,
+      }
+    ];
+
   };
 
   return (
@@ -75,8 +88,10 @@ function Posts() {
         </button>
       </form>
 
+      
+
       {state.posts.data.map((element, index) => (
-        <li key={element.id}>
+        <li>
           {element.id} {element.title}
           <span
             style={{ cursor: "pointer" }}
