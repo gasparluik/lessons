@@ -11,7 +11,7 @@ function Navbar() {
             </div>
 
             <div className="navbar-btns">
-                <Link to="add-item">
+                <Link to="/item-list">
                     <button>Esemete list</button>
                 </Link>
                 <Link to="/category-list">

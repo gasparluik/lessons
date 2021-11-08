@@ -16,7 +16,6 @@
     background-color: #ffff;
     border-radius: 5px;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-    width: 400px;
     max-width: 100%;
     padding: 0px 40px 30px 40px;
     justify-content: center;
@@ -76,4 +75,11 @@
     border: 2px solid #e2e615;
     color: #222;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+.form-inner li{
+    margin: 10px 0px;
+    padding: 8px;
+    border: 2px solid #222;
+    font-size: 18px;
 }

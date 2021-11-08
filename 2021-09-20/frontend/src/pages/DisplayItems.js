@@ -1,43 +1,43 @@
 
 import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import CategoryList from "../components/CategoryList";
 import './ListView.css'
 
-function DisplayCategories() {
+function DisplayItems() {
     const [isLoading, setIsLoading] = useState(true);
-    const [loadedCategories, setLoadedCategories] = useState([]);
-    const [posts, setPosts] = useState([])
+    //const [loadedItems, setLoadedItems] = useState([]);
+    const [items, setItems] = useState([])
 
     useEffect(()=>{
-        fetch('http://localhost:8080/categories').then(res => {
+        fetch('http://localhost:8080/items').then(res => {
             return res.json();
         }).then(data =>{
             console.log(data);
             setIsLoading(false);
-            setLoadedCategories(data);
-            setPosts(data)
+            //setLoadedItems(data);
+            setItems(data)
         });
     },[])
 
     if (isLoading) {
         return (<div>Laeb...</div>)
-    //display data in a table from
+        //display data in a table from
 
     }
 //<CategoryList categories={loadedCategories} />
     return (
         <div className="form">
-            <h1>Kategooriad</h1>
+            <h1>Esemed</h1>
             <div className="form-inner">
                 <ul>
                     {
-                        posts.map(post => {
+                        items.map(item => {
                             return(
-                                <li key={post.id}>
+                                <li key={item.id}>
                                     <div className="item">
-                                        Name: {post.name},
-                                        Type: {post.type}
+                                        Name: {item.name},
+                                        Price: {item.price},
+                                        Category: {item.category}
                                         <br />
                                     </div>
                                 </li>
@@ -45,7 +45,7 @@ function DisplayCategories() {
                         })
                     }
                 </ul>
-                <Link to="add-category">
+                <Link to="add-item">
                     <button>Lisa uus</button>
                 </Link>
             </div>
@@ -53,4 +53,4 @@ function DisplayCategories() {
     )
 }
 
-export default DisplayCategories;
+export default DisplayItems;

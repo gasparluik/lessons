@@ -11,6 +11,7 @@ function ShowPosts() {
       const url = "http://localhost:8081/api/post/fetch";
       const response = await fetch(url);
       const data = await response.json();
+      setPosts({posts : data})
       if (response.ok) {
         console.log("Successfully fetched posts");
         console.log(data);
