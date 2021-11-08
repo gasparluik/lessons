@@ -61,4 +61,10 @@ exports.signup = async (req, res) => {
   } catch (e) {
     res.status(400).json({ error: e.message })
   }
+
+  exports.getUser = async (req, res) => {
+    const user = await User.find({id})
+    
+    res.status(200).send(Posts)
+  }
 }

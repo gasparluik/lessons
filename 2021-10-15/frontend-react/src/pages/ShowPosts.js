@@ -1,50 +1,40 @@
-import { useContext, useRef, useState, useEffect } from "react";
-import { Context } from "../store";
-import { Form, Button} from "antd"
-import { addPost, removePost, updatePosts, getPosts } from "../store/actions";
+import { useState, useEffect } from "react";
+import { Form, Button } from "antd";
 
 function ShowPosts() {
-  const [title, setTitle] = useState("");
-  const [state, dispatch] = useContext(Context);
-  const inputRef = useRef(null);
-
-
-  const displayPosts = () => {
-
-}
-
+  const [posts, setPosts] = useState("");
 
   //võite panna eraldi nupu, et get latest from database (sync)
-  const handleFetch = async (e) => {
-
-    const post = {
-        title: '',
-        body: '',
-        posts: []
+  const handleFetch = async () => {
+    //fetchimise erinevad olekud
+    try {
+      const url = "http://localhost:8081/api/post/fetch";
+      const response = await fetch(url);
+      const data = await response.json();
+      if (response.ok) {
+        console.log("Successfully fetched posts");
+        console.log(data);
+      }
+    } catch (err) {
+      console.log(err);
     }
+  };
 
-    const res = await fetch("http//localhost:8081/api/post/fetch")
-    .then((res) => {
-        const data = res.data;
-        this.setState({ posts: data})
-        console.log("data fetched")
-    }).catch(() => {
-        console.log("Error with somehting")
-    })
-
-
-    if (res) {
-      console.log("Successfully fetched posts");
-    }
-
-  }
+  const displayPosts = (posts) => {
+    return (
+      <div className="posts">
+        {posts.map((element, index) => (
+          <li>
+            {element.id} {element.content}
+          </li>
+        ))}
+      </div>
+    );
+  };
 
   return (
-    <div>
-      <h1>Posts</h1>
-      <Form>
+    <div className="container">
       <Button onClick={handleFetch}>Fetch</Button>
-      </Form>
     </div>
   );
 }
