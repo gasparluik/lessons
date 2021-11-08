@@ -4,7 +4,7 @@ import Home from './pages/Home';
 import Cart from './pages/Cart';
 import Navbar from './components/Navbar';
 import AddItem from './pages/AddItem';
-import AddCategory from "./components/AddCategoryForm";
+import AddCategory from "./pages/AddCategory";
 
 function App() {
   return (
