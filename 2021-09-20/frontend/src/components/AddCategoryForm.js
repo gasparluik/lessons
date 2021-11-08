@@ -1,5 +1,6 @@
-import './AddItemForm.css';
+import './AddItemForm.css'
 import { useRef } from 'react';
+
 
 function AddCategoryForm(props) {
     const nameInputRef = useRef();
@@ -19,15 +20,21 @@ function AddCategoryForm(props) {
 
     return (
         <form onSubmit={formSubmitHandler}>
-            <select required ref={typeInputRef} >
-                <option>PREMIUM</option>
-                <option>DELUXE</option>
-                <option>BASIC</option>
-            </select>
-            <br />
-            <label>Category name </label>
-            <input placeholder="...." type="text" required ref={nameInputRef} /><br />
-            <button>Add category</button>
+            <div className="form-inner">
+                <div className="">
+                    <select required ref={typeInputRef} >
+                        <option>PREMIUM</option>
+                        <option>DELUXE</option>
+                        <option>BASIC</option>
+                    </select>
+                </div>
+                <br />
+                <label>Category name </label>
+                <input placeholder="...." type="text" required ref={nameInputRef} />
+                <br />
+                <button>Add category</button>
+            </div>
+
         </form>
     );
 }

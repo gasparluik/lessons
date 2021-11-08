@@ -1,6 +1,5 @@
 import React, { useState, useContext } from "react";
 import { Button, Input, Form } from "antd";
-import { EyeInvisibleFilled, EyeFilled } from "@ant-design/icons";
 import { loginUser } from "../store/actions";
 import { Context } from "../store";
 

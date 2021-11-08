@@ -12,10 +12,10 @@ function Navbar() {
 
             <div className="navbar-btns">
                 <Link to="add-item">
-                    <button>Lisa uus ese</button>
+                    <button>Esemete list</button>
                 </Link>
-                <Link to="/add-category">
-                    <button>Kategooriad</button>
+                <Link to="/category-list">
+                    <button>Kategooriate list</button>
                 </Link>
                 <Link to="/admin">
                     <button>Admini vaatesse</button>

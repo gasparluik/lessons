@@ -7,4 +7,4 @@ function Category(props) {
     )
 }
 
-export default Item;
+export default Category;
